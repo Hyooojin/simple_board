@@ -1,0 +1,10 @@
+<h1>게시판</h1>
+<p>게시글 목록</p>
+
+<a href = "/post/new">게시물 작성하러 가기</a>
+<% @posts.each do |p|%>
+    <p><%=p.id%>번째 글: <%=p.title%></p>
+    <a href="/post/show/<%=p.id%>">보기<%= p.id%></a>
+    
+    <hr>
+<%end%>

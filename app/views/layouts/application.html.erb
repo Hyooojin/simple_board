@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">홈으로</a>
+<p><%=flash[:notice]%></p>
+
+<% if session[:user_id] %>
+  <a href = "/user/logout">로그아웃</a>
+  <a href = "/user/index">모든 회원정보</a>
+<% else %>
+  <a href =" /user/new">회원가입</a>
+  <a href = "/user/login">로그인</a>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
